@@ -5,8 +5,8 @@ env.use_ssh_config = True
 def production():
     env.host = ['bob']
 
-def prepare_deploy(message):
-    local("git add -p && git commit -m '{}'".format(message))
+def prepare_deploy():
+    local("git add -p && git commit")
     local("git push")
 
 def deploy():
